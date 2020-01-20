@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import {
   MatInputModule,
   MatPaginatorModule,
@@ -11,29 +11,30 @@ import {
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule } from '@angular/material';
+
 import { IonicModule } from '@ionic/angular';
 
-import { AddPageRoutingModule } from './add-routing.module';
+import { EditPageRoutingModule } from './edit-routing.module';
 
-import { AddPage } from './add.page';
+import { EditPage } from './edit.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     IonicModule,
-    AddPageRoutingModule,
+    EditPageRoutingModule,
+    ReactiveFormsModule,
     MatInputModule,
-  MatPaginatorModule,
-  MatProgressSpinnerModule,
-  MatSortModule,
-  MatTableModule,
-  MatIconModule,
-  MatButtonModule,
-  MatCardModule,
-  MatFormFieldModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule
   ],
-  declarations: [AddPage]
+  declarations: [EditPage]
 })
-export class AddPageModule {}
+export class EditPageModule {}

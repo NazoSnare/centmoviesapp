@@ -4,24 +4,29 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      Movie Listing
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
+    <ion-button *ngIf="allMovies.length>0" href="add">Add Movie</ion-button>
+    <div (click)="editMovie(movie)" class="movie" *ngFor="let movie of allMovies">
+        <ion-item >
+            {{movie.title}}
+            <div class="item-note genre" slot="end">
+              {{movie.genre}}
+            </div>
+          </ion-item>
+          <small class="description">{{movie.description}}</small> 
     </div>
-  -->
+    
+
+    <ion-item *ngIf="allMovies.length<1">
+      <h3>No movies yet</h3>
+      <ion-button href="/add">Add Movie</ion-button>
+    </ion-item>
+
+  </ion-list>
 </ion-content>

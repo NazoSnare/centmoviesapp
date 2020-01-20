@@ -1,1 +1,21 @@
 
+.description{
+    color: gray;
+    font-style: italic;
+    margin: 0px 6px 6px 6px;
+
+}
+
+ion-item{
+    --border-style: none;
+}
+
+.movie{
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+
+.genre{
+    color:orangered;
+}
+

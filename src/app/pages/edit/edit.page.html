@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/Movie-detail/{{_id}}"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Movie Edit</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="movie-container mat-elevation-z8">
+      <div class="movie-loading-shade"
+           *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+      </div>
+      <mat-card class="movie-card">
+        <form [formGroup]="movieForm" (ngSubmit)="onUpdateMovie()">
+          <mat-form-field class="movie-full-width">
+            <input matInput placeholder="Movie Titler" formControlName="title"
+                   [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="!movieForm.get('title').valid && movieForm.get('title').touched">Please enter Movie Title</span>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="movie-full-width">
+            <input matInput placeholder="Movie Desc" formControlName="description"
+                   [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="!movieForm.get('description').valid && movieForm.get('description').touched">Please enter Movie Description</span>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="movie-full-width">
+            <input matInput placeholder="Movie Genre" formControlName="genre"
+                   [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="!movieForm.get('genre').valid && movieForm.get('genre').touched">Please enter Movie Genre </span>
+            </mat-error>
+          </mat-form-field>
+          <div class="button-row">
+            <button type="submit" [disabled]="!movieForm.valid" mat-flat-button color="primary"><mat-icon>save</mat-icon>Save</button>
+            <button type="button" (click)="deleteMovie()" class="btn-danger"  mat-flat-button color="danger"><mat-icon>close</mat-icon>Delete</button>
+
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </ion-content>

@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  p={
+    title: 'List Movies',
+    url: '/list',
+    icon: 'list'
+  };
   constructor() {}
 
 }

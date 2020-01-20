@@ -20,8 +20,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/add/add.module').then( m => m.AddPageModule)
   },
   {
-    path: 'movie',
-    loadChildren: () => import('./pages/movie/movie.module').then( m => m.MoviePageModule)
+    path: 'edit',
+    loadChildren: () => import('./pages/edit/edit.module').then( m => m.EditPageModule)
   }
 ];
 
